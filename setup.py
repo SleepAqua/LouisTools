@@ -53,7 +53,7 @@ setup(
           'Topic :: Database',
           'Topic :: Utilities',
           'Topic :: Office/Business :: Financial',
-          'Topic :: Office/Business :: Financial :: Investment'
+          'Topic :: Office/Business :: Financial :: Investment',
           'Topic :: Software Development',
           'Topic :: Software Development :: Build Tools',
           'Topic :: Software Development :: Debuggers',
