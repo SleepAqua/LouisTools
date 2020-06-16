@@ -16,5 +16,6 @@ LouisTools/louis_re.py
 LouisTools.egg-info/PKG-INFO
 LouisTools.egg-info/SOURCES.txt
 LouisTools.egg-info/dependency_links.txt
+LouisTools.egg-info/not-zip-safe
 LouisTools.egg-info/requires.txt
 LouisTools.egg-info/top_level.txt

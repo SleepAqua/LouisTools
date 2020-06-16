@@ -1,11 +1,11 @@
 Metadata-Version: 2.1
 Name: LouisTools
-Version: 0.0.2
-Summary: This is a tool-set for data engineering, mainly in financial area.
+Version: 0.1.1
+Summary: A very useful tool-set for data/operation/testing engineers, specialized in ETL and finance.
 Home-page: https://github.com/SleepAqua/LouisTools
 Author: Louis Tian
 Author-email: dqyyrlfy@gmail.com
-License: UNKNOWN
+License: MIT
 Description: <!--
          * @version: Python 3.7.3
          * @Author: Louis
@@ -15,21 +15,90 @@ Description: <!--
         --> 
         
         ## About Louis
-        Louis is a data engineer working in financial area. A Python programmer, Linux maintainer, loving learning and sharing.
+        Louis is a data engineer working in financial area. A Python programmer, Linux operationer, loving learning and sharing.
         
         ## About Tools
-        This is a bunch of tools covering data engineering, financial data washing, os, time series data washing, regex, logging, email and more.
-        There is also a HTMLTestRunner (Thanks to Wai Yip Tung for making such a good-to-use Python 2 package) in Python 3 version modified by me.
+        The tools are designed for the following technicians:
+        * data engineers (ETL, especially for financial data and time-series data)
+        * operation engineers (mainly Linux)
+        * testing engineers (unnittest, logging, HTML, email)
+        * data analysts (data I/O and data-washing, especially for financial data)
+        * application developers (regex, logging, config I/O, useful decorators)
         
-        ## Requirements
-        No any non-built-in packages need to be installed except for pandas (which I think is very common).
+        A HTMLTestRunner in Python 3 version is contained in the package (Thanks to Wai Yip Tung for making such a good-to-use Python 2 package).
         
-        ## Installation
-        `pip install LouisTools`
+        ## Examples
+        1. You can parse a path string including date formatters:
+        ```python
+        import LouisTools as LT
+        file_path = "/data/certain_data/%Y/%m/%Y%m%d.csv"
+        today_str = LT.TODAY
+        today_file_path = LT.parse_date_in_str(file_path, today_str)
+        print(today_file_path)  # /data/certain_data/2020/06/20200616.csv
+        ```
+        2. You can make a (parent) directory safely:
+        ```python
+        import LouisTools as LT
+        file_to_save = "/home/usr/new_project/data.hdf"
+        LT.make_parent_dir(file_to_save)  # /home/usr/new_project will be created if not exist
+        dir_to_make = "/home/usr/new_project"
+        LT.make_dir(file_to_save)  # /home/usr/new_project will be created if not exist
+        ```
+        3. You can create a logger very simply and fastly:
+        ```python
+        import LouisTools as LT
+        LOGGER = LT.single_lvl_logger("LouisTools")  # Only StreamHandler, LouisTools is the log name
+        LOGGER = LT.single_lvl_logger("LouisTools", "/project/log/a_log_file.log")  # FileHandler is created saving in "/project/log/a_log_file.log"
+        ```
+        4. You can interact with you config files safely and quickly (both json and ini supported):
+        ```python
+        import LouisTools as LT
+        json_path = "/home/usr/projectL/projectL.json"  # A typical json file path in Linux
+        config_content = LT.read_json(json_path, encoding_="utf-8")  # You can change encoding_ arg as what you want!
+        assert isinstance(config_content, dict)
+        ini_path = r"C:\Users\A_USER\projectX\projectX.ini"  # A typical ini file path in Windows
+        config_content = LT.read_ini(ini_path, encoding_="utf-8-sig")  # Windows' gift: a BOM added for freee!
+        assert isinstance(config_content, dict)
+        ```
+        5. You can dump the result without overwrite possibly existing files (safe, safe, and safe! even the directory will be checked and created if not exist):
+        ```python
+        import LouisTools as LT
+        @LT.dump_without_overwrite(sep="\t", encoding="utf-8", header=True, index=False)
+        def generate_df(df, df_path):
+            # You can do something on df
+            return df, df_path
+        ```
         
-        ## Usage
-        `import LouisTools as LT`
-        
-Keywords: tools data data-washing finance os logging
-Platform: UNKNOWN
+Keywords: tools data operation testing finance os re IO email logging datetime
+Platform: any
+Classifier: Environment :: Console
+Classifier: Environment :: Win32 (MS Windows)
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Microsoft
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Unix
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Database
+Classifier: Topic :: Utilities
+Classifier: Topic :: Office/Business :: Financial
+Classifier: Topic :: Office/Business :: Financial :: InvestmentTopic :: Software Development
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Topic :: Software Development :: Debuggers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Communications :: Email
+Classifier: Topic :: System :: Software Distribution
+Classifier: Topic :: System :: Systems Administration
 Description-Content-Type: text/markdown

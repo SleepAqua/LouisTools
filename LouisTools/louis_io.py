@@ -14,17 +14,18 @@ from LouisTools.louis_consts import SEP_MAP
 
 
 def read_json(json_file, encodings="utf8"):
-    """ Read and parse a .json file to a Python dict object. """
+    """ Read and parse a .json file to a Python dict object safely. """
     with open(json_file, "r", encoding=encodings) as f:
         paths = json.load(f)
     return paths
 
 def write_json(content, json_file, mode_="a", encodings="utf8"):
+    """ Write to a .json file safely. """
     with open(json_file, mode=mode_, encoding=encodings) as f:
         json.dump(content, f)
 
 def read_ini(config_file, encoding_="utf-8-sig"):
-    """ Read and parse a .ini file to a Python dict object. """
+    """ Read and parse a .ini file to a Python dict object safely. """
     cf = configparser.ConfigParser()
     cf.read(config_file, encoding=encoding_)
     client_info = dict(cf._sections)
@@ -33,6 +34,7 @@ def read_ini(config_file, encoding_="utf-8-sig"):
     return client_info
 
 def export_to_ini_file(config_file, section, option, value, encoding_="utf-8-sig"):
+    """ Write to a .ini file safely. If not section exist, it will be created. """
     cf = configparser.ConfigParser()
     cf.read(config_file, encoding=encoding_)
     try:
@@ -44,6 +46,7 @@ def export_to_ini_file(config_file, section, option, value, encoding_="utf-8-sig
         cf.write(fp)
 
 def safe_read_df(df_path, encoding_):
+    """ Relatively safer way of reading a data frame. ',' for .csv and '\\t' for .xls/.xlsx """
     sep_ = SEP_MAP[df_path.split(".")[-1]]
     try:
         df = pd.read_csv(df_path, encoding=encoding_, sep=sep_)

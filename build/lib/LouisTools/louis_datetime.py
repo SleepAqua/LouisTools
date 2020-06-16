@@ -27,6 +27,7 @@ def datenum_to_season(path, datenum):
     return year + month_season_table[month]
 
 def is_datenum(datenum):
+    """ Return True if given str is a date in format %Y%m%d """
     try:
         datetime.strptime(datenum, "%Y%m%d")
         return True

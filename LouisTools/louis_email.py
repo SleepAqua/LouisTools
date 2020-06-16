@@ -15,14 +15,12 @@ from LouisTools.louis_datetime import parse_date_in_str
 from LouisTools.louis_keyrings import peek_password
 
 
-TO = 'dqyyrlfy@gmail.com'
-FROM = 'dqyyrlfy@gmail.com'
-SMTP_SERVER= 'smtp.exmail.gmail.com'
-USR = 'Louis'
-PWD = peek_password("Louis", "Louis")
-LOG_PATH = "$HOME/log/%Y%m%d.log"
-
-def simple_email(from_=FROM, to_=TO, server=SMTP_SERVER, user=USR, password=PWD, file_path=LOG_PATH):
+def simple_email(from_='dqyyrlfy@gmail.com', 
+                 to_='dqyyrlfy@gmail.com',
+                 server='smtp.exmail.gmail.com',
+                 user='Louis',
+                 password=peek_password("Louis_user", "Louis_email"),
+                 file_path="/tmp/log/%Y%m%d.log"):
     """ Send a email with one attach (for log sending) """
     log_file = parse_date_in_str(file_path, TODAY)
     if not os.path.isfile(log_file):

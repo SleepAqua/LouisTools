@@ -15,9 +15,10 @@ from LouisTools.louis_os import make_parent_dir
 from LouisTools.louis_df import add_number_to_cols
 
 
-LOGGER = single_lvl_logger("Louis_Tools")
+LOGGER = single_lvl_logger("LouisTools")
 
 def timer(func):
+    """ Print the time cost by the decorated function. """
     @wraps(func)
     def wrapper(*args, **kwargs):
         start_time = perf_counter()

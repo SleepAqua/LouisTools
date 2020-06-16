@@ -11,8 +11,8 @@ from setuptools import setup, find_packages
 with open("README.md", encoding="utf-8") as f:
     long_description = f.read()
 MAJOR_VERSION = '0'
-MINOR_VERSION = '0'
-MICRO_VERSION = '2'
+MINOR_VERSION = '1'
+MICRO_VERSION = '1'
 VERSION = "{}.{}.{}".format(MAJOR_VERSION, MINOR_VERSION, MICRO_VERSION)
 
 setup(
@@ -21,7 +21,7 @@ setup(
         description='A very useful tool-set for data/operation/testing engineers, specialized in ETL and finance.',
         long_description=long_description,
         long_description_content_type="text/markdown",
-        keywords='tools data operation testing finance os  re IO email logging datetime',
+        keywords='tools data operation testing finance os re IO email logging datetime',
         author='Louis Tian',
         author_email='dqyyrlfy@gmail.com',
         license='MIT',
