@@ -6,7 +6,7 @@
 @LastEditTime: 2020-06-15 17:55:14
 '''
 __project__ = "LouisTools"
-__version__ = "0.0.2"
+__version__ = "0.1.0"
 
 import LouisTools.louis_consts
 import LouisTools.louis_datetime
