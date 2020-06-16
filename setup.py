@@ -12,7 +12,7 @@ with open("README.md", encoding="utf-8") as f:
     long_description = f.read()
 MAJOR_VERSION = '0'
 MINOR_VERSION = '1'
-MICRO_VERSION = '1'
+MICRO_VERSION = '2'
 VERSION = "{}.{}.{}".format(MAJOR_VERSION, MINOR_VERSION, MICRO_VERSION)
 
 setup(
