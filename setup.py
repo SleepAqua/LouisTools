@@ -13,14 +13,14 @@ with open("README.md", encoding="utf-8") as f:
 
 setup(
         name='LouisTools',
-        version='0.0.1',
+        version='0.0.2',
         description='This is a tool-set for data engineering, mainly in financial area.',
         long_description=long_description,
         long_description_content_type="text/markdown",
         keywords='tools data data-washing finance os logging',
         author='Louis Tian',
         author_email='dqyyrlfy@gmail.com',
-        url='http://github.com/txx/Louis_tools',
+        url='https://github.com/SleepAqua/LouisTools',
         packages=find_packages(),
         install_requires =['pandas']
 )

@@ -1,8 +1,8 @@
 Metadata-Version: 2.1
 Name: LouisTools
-Version: 0.0.1
+Version: 0.0.2
 Summary: This is a tool-set for data engineering, mainly in financial area.
-Home-page: http://github.com/txx/Louis_tools
+Home-page: https://github.com/SleepAqua/LouisTools
 Author: Louis Tian
 Author-email: dqyyrlfy@gmail.com
 License: UNKNOWN
@@ -13,7 +13,6 @@ Description: <!--
          * @LastEditors: Louis
          * @LastEditTime: 2020-06-15 18:15:17
         --> 
-        # LouisTools
         
         ## About Louis
         Louis is a data engineer working in financial area. A Python programmer, Linux maintainer, loving learning and sharing.
