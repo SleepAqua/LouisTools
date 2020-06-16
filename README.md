@@ -8,6 +8,7 @@
 
 # LouisTools -- Tools for data/operation/testing engineers
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PyPI](https://img.shields.io/pypi/v/LouisTools.svg?style=flat-square)](https://pypi.python.org/pypi/LouisTools/)
 [![PyPI](https://img.shields.io/pypi/pyversions/LouisTools.svg?style=flat-square)](https://pypi.python.org/pypi/LouisTools/)
 
